@@ -1,0 +1,56 @@
+从防火墙的输出看，88 端口并没有被列在允许的端口中。你需要手动添加 88 端口以允许访问。请使用以下命令：
+sudo firewall-cmd --add-port=88/tcp --permanent
+sudo firewall-cmd --reload
+
+
+
+如果你需要重新为 88 端口添加防火墙规则，可以使用以下命令：
+删除现有规则（如果存在）： 如果你之前添加了 88 端口的规则并希望重新设置，可以先删除它：
+sudo firewall-cmd --remove-port=88/tcp --permanent
+添加 88 端口： 然后，重新添加 88 端口：
+
+sudo firewall-cmd --add-port=88/tcp --permanent
+重新加载防火墙： 最后，重新加载防火墙以使更改生效：
+
+sudo firewall-cmd --reload
+
+
+//  docker安装
+#添加 Docker 官方 GPG key （可能国内现在访问会存在问题）
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# 阿里源（推荐使用阿里的gpg KEY）
+curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+
+
+#添加 apt 源:
+#Docker官方源
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+#阿里apt源
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+#更新源
+sudo apt update
+sudo apt-get update
+
+#安装最新版本的Docker
+sudo apt install docker-ce docker-ce-cli containerd.io
+#等待安装完成
+
+#查看Docker版本
+sudo docker version
+
+#查看Docker运行状态
+sudo systemctl status docker
+
+sudo apt-get install bash-completion
+
+sudo curl -L https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker.sh
+
+source /etc/bash_completion.d/docker.sh
+
+/etc/docker/daemon.json
