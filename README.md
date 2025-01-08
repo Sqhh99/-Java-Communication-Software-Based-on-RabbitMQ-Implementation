@@ -26,34 +26,37 @@
 
 用户注册：
 对应功能的代码截图：
+
  ![image](https://github.com/user-attachments/assets/6876e019-0edd-4504-81ea-8334df937f9e)
 
 可以看到用户信息已保存到.xml文档里面了
  
 
 用户登录：
-测试结果：
+
  ![image](https://github.com/user-attachments/assets/5f1d84e6-7437-4c26-8b1d-ebd6f962f563)
 
 
 聊天功能：
-测试结果：
 
 发送私人消息:
 用户1212向用户123发送“你好”
+
  ![image](https://github.com/user-attachments/assets/09f2a692-14f9-4cb1-b0f1-d655190f4e5f)
 
 发送公共消息：
 用户sqhh99向所有用户发送“你好-----------------------------------------”
+
  ![image](https://github.com/user-attachments/assets/6a323a6c-0e88-46e3-8b54-88102890db5c)
 
 
 文件传输：
-测试结果：
 在文件发送这一栏输入文件路径，或者点击按钮选择文件，并点击发送
+
  ![image](https://github.com/user-attachments/assets/2c5f2fa8-99b6-41cb-b024-8a947f33bbac)
 
 用户1212向用户123发送opencv.txt,可以看到发送成功，并且用户123程序文件目录下出现了对应文件
+
  ![image](https://github.com/user-attachments/assets/32469940-a12c-4ecc-a872-422510d8aec5)
 
 
